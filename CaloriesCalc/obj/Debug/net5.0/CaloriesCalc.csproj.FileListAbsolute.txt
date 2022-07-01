@@ -1,0 +1,15 @@
+/Users/timofejvoznesenskij/RiderProjects/CaloriesCalc/CaloriesCalc/bin/Debug/net5.0/CaloriesCalc.deps.json
+/Users/timofejvoznesenskij/RiderProjects/CaloriesCalc/CaloriesCalc/bin/Debug/net5.0/CaloriesCalc.runtimeconfig.json
+/Users/timofejvoznesenskij/RiderProjects/CaloriesCalc/CaloriesCalc/bin/Debug/net5.0/CaloriesCalc.runtimeconfig.dev.json
+/Users/timofejvoznesenskij/RiderProjects/CaloriesCalc/CaloriesCalc/bin/Debug/net5.0/CaloriesCalc.dll
+/Users/timofejvoznesenskij/RiderProjects/CaloriesCalc/CaloriesCalc/bin/Debug/net5.0/ref/CaloriesCalc.dll
+/Users/timofejvoznesenskij/RiderProjects/CaloriesCalc/CaloriesCalc/bin/Debug/net5.0/CaloriesCalc.pdb
+/Users/timofejvoznesenskij/RiderProjects/CaloriesCalc/CaloriesCalc/obj/Debug/net5.0/CaloriesCalc.csproj.AssemblyReference.cache
+/Users/timofejvoznesenskij/RiderProjects/CaloriesCalc/CaloriesCalc/obj/Debug/net5.0/CaloriesCalc.GeneratedMSBuildEditorConfig.editorconfig
+/Users/timofejvoznesenskij/RiderProjects/CaloriesCalc/CaloriesCalc/obj/Debug/net5.0/CaloriesCalc.AssemblyInfoInputs.cache
+/Users/timofejvoznesenskij/RiderProjects/CaloriesCalc/CaloriesCalc/obj/Debug/net5.0/CaloriesCalc.AssemblyInfo.cs
+/Users/timofejvoznesenskij/RiderProjects/CaloriesCalc/CaloriesCalc/obj/Debug/net5.0/CaloriesCalc.csproj.CoreCompileInputs.cache
+/Users/timofejvoznesenskij/RiderProjects/CaloriesCalc/CaloriesCalc/obj/Debug/net5.0/CaloriesCalc.dll
+/Users/timofejvoznesenskij/RiderProjects/CaloriesCalc/CaloriesCalc/obj/Debug/net5.0/ref/CaloriesCalc.dll
+/Users/timofejvoznesenskij/RiderProjects/CaloriesCalc/CaloriesCalc/obj/Debug/net5.0/CaloriesCalc.pdb
+/Users/timofejvoznesenskij/RiderProjects/CaloriesCalc/CaloriesCalc/obj/Debug/net5.0/CaloriesCalc.genruntimeconfig.cache
