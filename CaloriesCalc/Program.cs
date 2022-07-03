@@ -34,7 +34,7 @@ namespace CaloriesCalc
             
             user.CountingCalories();
             user.ChooseYourGoal();
-            user.ProteinsFatsCarbos();
+            user.CountingNutrients();
             Console.Clear();
             
             Console.ForegroundColor = ConsoleColor.Red;
@@ -52,7 +52,12 @@ namespace CaloriesCalc
             Console.WriteLine("{0,-22} | {1,-11}", "Proteins", user.proteins);
             Console.WriteLine("{0,-22} | {1,-11}", "Fats", user.fats);
             Console.WriteLine("{0,-22} | {1,-11}", "Carbs", user.carbs);
+
+            User first = new User(user.calories, user.proteins, user.fats, user.carbs);
+
+            User second = new User(first, 0,0,0,0);
             
+
         }
         
        

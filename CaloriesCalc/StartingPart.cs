@@ -7,7 +7,7 @@ namespace CaloriesCalc
         private int weight, high, age, dietGoal;
         private double activity;
         private string sex;
-        public double calories, proteins, fats, carbs;
+        public int calories, proteins, fats, carbs;
 
         public StartingPart(int weight, int high, int age, double activity, string sex)
         {
@@ -55,7 +55,7 @@ namespace CaloriesCalc
                 }
                 else if (dietGoal == 2)
                 {
-                    calories = calories;
+                    calories = Convert.ToInt32(calories);
                     break;
                 }
                 else if (dietGoal == 3)
@@ -66,7 +66,7 @@ namespace CaloriesCalc
             }
         }
 
-        public void ProteinsFatsCarbos()
+        public void CountingNutrients()
         {
             if (dietGoal == 1)
             {
