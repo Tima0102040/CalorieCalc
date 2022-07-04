@@ -19,12 +19,14 @@ namespace CaloriesCalc
             Carbs = carbs;
         }
         
-        public User(User first, int spentCalories, int spentProteins, int spentFats, int spentCarbs)
+        public User (User first, int spentCalories, int spentProteins, int spentFats, int spentCarbs)
+            : this(first.Calories, first.Proteins,first.Fats,first.Carbs)
         {
             SpentCalories = spentCalories;
             SpentProteins = spentProteins;
             SpentFats = spentFats;
             SpentCarbs = spentCarbs;
+            
         }
 
         public void ReduceBalance(int prodCalories, int prodProteins, int prodFats, int prodCarbs)

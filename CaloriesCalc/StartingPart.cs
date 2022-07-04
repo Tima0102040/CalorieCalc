@@ -87,6 +87,5 @@ namespace CaloriesCalc
                 carbs = Convert.ToInt32((0.5 * calories) / 4);
             }
         }
-        
     }
 }
