@@ -20,7 +20,7 @@ namespace CaloriesCalc
         }
         
         public User (User first, int spentCalories, int spentProteins, int spentFats, int spentCarbs)
-            : this(first.Calories, first.Proteins,first.Fats,first.Carbs)
+            : this(first.Calories, first.Proteins, first.Fats,first.Carbs)
         {
             SpentCalories = spentCalories;
             SpentProteins = spentProteins;

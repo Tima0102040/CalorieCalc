@@ -4,12 +4,16 @@ namespace CaloriesCalc
 {
     public class ProductInformer
     {
-       /* public void Buy(User user, InternetPayment payment)
+        public void Buy(User second, Product product)
         {
-            double price = payment.GetDiscountPrice(user);
-            user.ReduceBalance(price);
-            Console.WriteLine("Transaction {0} has been completed. {1}$ was deducted from card {2}", payment.Name, price);
+            int calorie = product.ProductCalorie;
+            int protein = product.ProductProtein;
+            int fat = product.ProductFat;
+            int carb = product.ProductCarb;
+            
+            second.ReduceBalance(calorie,protein,fat,carb);
+            Console.WriteLine("Product {0} was added to your Recommended Daily Amount", product.ProductName);
         }
-        */
+        
     }
 }
