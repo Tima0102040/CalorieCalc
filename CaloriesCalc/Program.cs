@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Drawing;
 using System.Threading;
+using CaloriesCalc.PRoducts;
 
 namespace CaloriesCalc
 {
@@ -60,10 +61,19 @@ namespace CaloriesCalc
             User second = new User(first,0,0,0,0);
             
             Console.WriteLine("SecondCalories:" + second.Calories);
-            //Console.WriteLine("SecondProteins: " + first.Proteins);
-            //Console.WriteLine("SecondFats: " + first.Fats);
-            //Console.WriteLine("SecondCarbs: " + first.Carbs);
 
+            Diary milk = new Diary("Galychina", 100, 10, 10, 0, 3.5);
+            Fruits banana = new Fruits("Banana", 80, 20, 3, 40);
+            Meat chicken = new Meat("Chicken", 200, 100, 5, 0);
+            Seafood shrimp = new Seafood("Shrimps", 100, 20, 10, 0);
+
+            Product[] products = new Product[]
+            {
+                milk,
+                banana,
+                chicken,
+                shrimp
+            };
         }
         
     }

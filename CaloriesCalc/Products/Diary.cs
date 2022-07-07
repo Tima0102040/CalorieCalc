@@ -14,5 +14,4 @@ namespace CaloriesCalc.PRoducts
             DiaryFat = diaryFat;
         }
     }
-    
 }
