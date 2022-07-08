@@ -26,7 +26,6 @@ namespace CaloriesCalc
             SpentProteins = spentProteins;
             SpentFats = spentFats;
             SpentCarbs = spentCarbs;
-            
         }
 
         public void ReduceBalance(int prodCalories, int prodProteins, int prodFats, int prodCarbs)

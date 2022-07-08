@@ -56,24 +56,30 @@ namespace CaloriesCalc
             Console.WriteLine();
             
             User first = new User(user.calories, user.proteins, user.fats, user.carbs);
-            Console.WriteLine("FirstCalories:" + first.Calories);
-            
+
             User second = new User(first,0,0,0,0);
             
             Console.WriteLine("SecondCalories:" + second.Calories);
 
-            Diary milk = new Diary("Galychina", 100, 10, 10, 0, 3.5);
-            Fruits banana = new Fruits("Banana", 80, 20, 3, 40);
-            Meat chicken = new Meat("Chicken", 200, 100, 5, 0);
-            Seafood shrimp = new Seafood("Shrimps", 100, 20, 10, 0);
+            Diary milk = new Diary("Milk", 43, 4, 1, 0, 1);
+            Meat chickenBreast = new Meat("Chicken Breast", 195, 30, 8, 0);
+            Fruits banana = new Fruits("Banana", 89, 1, 0, 23);
+            Seafood shrimps = new Seafood("Shrimps", 144, 28, 3, 1);
+            Vegetables potato = new Vegetables("Potato", 104, 2, 2, 20);
 
             Product[] products = new Product[]
             {
                 milk,
+                chickenBreast,
                 banana,
-                chicken,
-                shrimp
+                shrimps,
+                potato
             };
+
+            foreach (Product product in products )
+            {
+                product.ToConsole();
+            }
         }
         
     }
