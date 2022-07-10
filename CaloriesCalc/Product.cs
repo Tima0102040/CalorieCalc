@@ -19,7 +19,6 @@ namespace CaloriesCalc
             Console.WriteLine("Carb: " + ProductCarb.ToString());
             Console.WriteLine("Nutritional value per 100gr");
         }
-
         public void Portion(int productWeight)
         {
             int caloriePortion = Convert.ToInt32(productWeight * ProductCalorie) / 100;

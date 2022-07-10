@@ -80,7 +80,34 @@ namespace CaloriesCalc
             {
                 product.ToConsole();
             }
+            
+            while (true)
+            {
+                Console.WriteLine();
+                Console.WriteLine("Welcome to your product diary");
+                Console.WriteLine();
+
+                for (int i = 0; i < products.Length; i++)
+                {
+                    Console.WriteLine($"Product {i} {products[i].ProductName}.");
+                    Console.WriteLine("Calories        Proteins        Fats        Carbs");
+                    Console.WriteLine(products[i].ProductCalorie
+                                      +"        "+products[i].ProductProtein
+                                      +"        "+products[i].ProductFat
+                                      +"        "+products[i].ProductCarb);
+                    Console.WriteLine(new String('-', 25));
+                }
+                
+                Console.WriteLine("Choose product: ");
+                string str = Console.ReadLine();
+                int productNumb = Convert.ToInt32(str);
+                
+                Console.WriteLine("Choose product weight: ");
+                string rts = Console.ReadLine();
+                int productWeight = Convert.ToInt32(rts);
+                
+                products[productNumb].Portion(productWeight);
+            }
         }
-        
     }
 }
