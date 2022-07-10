@@ -65,7 +65,6 @@ namespace CaloriesCalc
                 }
             }
         }
-
         public void CountingNutrients()
         {
             if (dietGoal == 1)

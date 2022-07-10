@@ -6,6 +6,7 @@ namespace CaloriesCalc.PRoducts
         {
             ProductName = productName;
             ProductCalorie = productCalorie;
+            ProductProtein = productProtein;
             ProductFat = productFat;
             ProductCarb = productCarb;
         }

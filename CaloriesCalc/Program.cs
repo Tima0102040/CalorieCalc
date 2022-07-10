@@ -53,14 +53,14 @@ namespace CaloriesCalc
             Console.WriteLine("{0,-22} | {1,-11}", "Proteins", user.proteins);
             Console.WriteLine("{0,-22} | {1,-11}", "Fats", user.fats);
             Console.WriteLine("{0,-22} | {1,-11}", "Carbs", user.carbs);
-            Console.WriteLine();
+            Console.WriteLine("Press any button to processed");
+            Console.ReadKey();
+            Console.Clear();
             
             User first = new User(user.calories, user.proteins, user.fats, user.carbs);
 
             User second = new User(first,0,0,0,0);
             
-            Console.WriteLine("SecondCalories:" + second.Calories);
-
             Diary milk = new Diary("Milk", 43, 4, 1, 0, 1);
             Meat chickenBreast = new Meat("Chicken Breast", 195, 30, 8, 0);
             Fruits banana = new Fruits("Banana", 89, 1, 0, 23);
@@ -76,26 +76,20 @@ namespace CaloriesCalc
                 potato
             };
 
-            foreach (Product product in products )
-            {
-                product.ToConsole();
-            }
+            ProductInformer productInformer = new ProductInformer();
             
             while (true)
             {
+                Console.WriteLine("{0,100}","Product diary");
+                Console.ForegroundColor = ConsoleColor.Yellow;
+                Console.WriteLine("Calories - {0}, Proteins - {1}, Fats - {2}, Carbs - {3}",
+                    second.Calories, second.Proteins, second.Fats, second.Carbs);
+                Console.ResetColor();
                 Console.WriteLine();
-                Console.WriteLine("Welcome to your product diary");
-                Console.WriteLine();
-
-                for (int i = 0; i < products.Length; i++)
+                
+                foreach (Product product in products )
                 {
-                    Console.WriteLine($"Product {i} {products[i].ProductName}.");
-                    Console.WriteLine("Calories        Proteins        Fats        Carbs");
-                    Console.WriteLine(products[i].ProductCalorie
-                                      +"        "+products[i].ProductProtein
-                                      +"        "+products[i].ProductFat
-                                      +"        "+products[i].ProductCarb);
-                    Console.WriteLine(new String('-', 25));
+                    product.ToConsole();
                 }
                 
                 Console.WriteLine("Choose product: ");
@@ -105,8 +99,23 @@ namespace CaloriesCalc
                 Console.WriteLine("Choose product weight: ");
                 string rts = Console.ReadLine();
                 int productWeight = Convert.ToInt32(rts);
-                
                 products[productNumb].Portion(productWeight);
+                Console.Clear();
+                if (productNumb >= 0 && productNumb < products.Length)
+                {
+                    if (products[productNumb].CaloriePortion < second.Calories
+                        && products[productNumb].ProteinPortion < second.Proteins
+                        && products[productNumb].FatPortion < second.Fats
+                        && products[productNumb].CarbPortion < second.Carbs)
+                    {
+                        productInformer.Buy(second,products[productNumb]);
+                    }
+                    else
+                    {
+                        Console.WriteLine("You have exhausted your daily allowance");
+                    }
+                }
+                
             }
         }
     }

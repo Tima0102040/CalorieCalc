@@ -9,22 +9,25 @@ namespace CaloriesCalc
         public int ProductProtein { get; set; }
         public int ProductFat { get; set; }
         public int ProductCarb { get; set; }
+        //----------------------------------
+        public int CaloriePortion { get; set; }
+        public int ProteinPortion { get; set; }
+        public int FatPortion { get; set; }
+        public int CarbPortion { get; set; }
         public virtual void ToConsole()
         {
-            Console.WriteLine(new String('-', 20));
-            Console.WriteLine("Name: " + ProductName);
-            Console.WriteLine("Calorie: " + ProductCalorie.ToString());
-            Console.WriteLine("Protein: " + ProductProtein.ToString());
-            Console.WriteLine("Fat: " + ProductFat.ToString());
-            Console.WriteLine("Carb: " + ProductCarb.ToString());
-            Console.WriteLine("Nutritional value per 100gr");
+            Console.WriteLine("Product {0}", ProductName);
+            Console.WriteLine("Calories        Proteins        Fats        Carbs");
+            Console.WriteLine($"{ProductCalorie.ToString()}" + $"{ProductProtein.ToString(),18}" +
+                              $"{ProductFat.ToString(),13}" + $"{ProductCarb.ToString(),13}");
+            Console.WriteLine(new String('-', 49));
         }
         public void Portion(int productWeight)
         {
-            int caloriePortion = Convert.ToInt32(productWeight * ProductCalorie) / 100;
-            int proteinPortion = Convert.ToInt32(productWeight * ProductProtein) / 100;
-            int fatPortion = Convert.ToInt32(productWeight * ProductFat) / 100;
-            int carbPortion = Convert.ToInt32(productWeight * ProductCarb) / 100;
+             CaloriePortion = Convert.ToInt32(productWeight * ProductCalorie) / 100;
+             ProteinPortion = Convert.ToInt32(productWeight * ProductProtein) / 100; 
+             FatPortion = Convert.ToInt32(productWeight * ProductFat) / 100;
+             CarbPortion = Convert.ToInt32(productWeight * ProductCarb) / 100;
         }
     }
 }
