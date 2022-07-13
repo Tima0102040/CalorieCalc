@@ -2,7 +2,7 @@ namespace CaloriesCalc
 {
     public class User
     {
-        public int Calories { get; private set; }
+        public int Calories { get;  set; }
         public int Proteins { get; private set; }
         public int Fats { get; private set; }
         public int Carbs { get; private set; }

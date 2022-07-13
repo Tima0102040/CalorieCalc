@@ -16,6 +16,5 @@ namespace CaloriesCalc
                 "Product {0} was added to your Recommended Daily Amount. Calories - {1}, Proteins - {2}, Fats - {3}, Carbs - {4}",
                 product.ProductName, calorie, protein, fat, carb);
         }
-        
     }
 }

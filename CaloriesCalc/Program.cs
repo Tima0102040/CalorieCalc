@@ -7,7 +7,6 @@ namespace CaloriesCalc
 {
     class Program
     {
-          
         static void Main(string[] args)
         {
             Console.WriteLine("{0,100}","Welcome to FatSecret calculator");
@@ -56,16 +55,17 @@ namespace CaloriesCalc
             Console.WriteLine("Press any button to processed");
             Console.ReadKey();
             Console.Clear();
-            
+
             User first = new User(user.calories, user.proteins, user.fats, user.carbs);
 
             User second = new User(first,0,0,0,0);
-            
+
             Diary milk = new Diary("Milk", 43, 4, 1, 0, 1);
             Meat chickenBreast = new Meat("Chicken Breast", 195, 30, 8, 0);
             Fruits banana = new Fruits("Banana", 89, 1, 0, 23);
             Seafood shrimps = new Seafood("Shrimps", 144, 28, 3, 1);
             Vegetables potato = new Vegetables("Potato", 104, 2, 2, 20);
+            Meat chicken = new Meat("ch", 1, 0, 0, 0);
 
             Product[] products = new Product[]
             {
@@ -74,49 +74,56 @@ namespace CaloriesCalc
                 banana,
                 shrimps,
                 potato
+                //chicken
             };
 
             ProductInformer productInformer = new ProductInformer();
             
             while (true)
             {
-                Console.WriteLine("{0,100}","Product diary");
-                Console.ForegroundColor = ConsoleColor.Yellow;
-                Console.WriteLine("Calories - {0}, Proteins - {1}, Fats - {2}, Carbs - {3}",
-                    second.Calories, second.Proteins, second.Fats, second.Carbs);
-                Console.ResetColor();
-                Console.WriteLine();
-                
-                foreach (Product product in products )
-                {
-                    product.ToConsole();
-                }
-                
-                Console.WriteLine("Choose product: ");
-                string str = Console.ReadLine();
-                int productNumb = Convert.ToInt32(str);
-                
-                Console.WriteLine("Choose product weight: ");
-                string rts = Console.ReadLine();
-                int productWeight = Convert.ToInt32(rts);
-                products[productNumb].Portion(productWeight);
-                Console.Clear();
-                if (productNumb >= 0 && productNumb < products.Length)
-                {
-                    if (products[productNumb].CaloriePortion < second.Calories
-                        && products[productNumb].ProteinPortion < second.Proteins
-                        && products[productNumb].FatPortion < second.Fats
-                        && products[productNumb].CarbPortion < second.Carbs)
+                Console.WriteLine("{0,100}", "Product diary");
+                    Console.ForegroundColor = ConsoleColor.Yellow;
+                    Console.WriteLine("Calories - {0}, Proteins - {1}, Fats - {2}, Carbs - {3}",
+                        second.Calories, second.Proteins, second.Fats, second.Carbs);
+                    Console.ResetColor();
+                    Console.WriteLine();
+
+                    foreach (Product product in products)
                     {
-                        productInformer.Buy(second,products[productNumb]);
+                        product.ToConsole();
                     }
-                    else
+
+                    Console.WriteLine("Choose product: ");
+                    string str = Console.ReadLine();
+                    int productNumb = Convert.ToInt32(str);
+
+                    Console.WriteLine("Choose product weight: ");
+                    string rts = Console.ReadLine();
+                    int productWeight = Convert.ToInt32(rts);
+                    products[productNumb].Portion(productWeight);
+                    Console.Clear();
+                    
+                    if (productNumb >= 0 && productNumb < products.Length)
                     {
-                        Console.WriteLine("You have exhausted your daily allowance");
+                        if (products[productNumb].CaloriePortion < second.Calories
+                            && products[productNumb].ProteinPortion < second.Proteins
+                            && products[productNumb].FatPortion < second.Fats
+                            && products[productNumb].CarbPortion < second.Carbs)
+                        {
+                            productInformer.Buy(second, products[productNumb]);
+                        }
+                        else
+                            Console.WriteLine("An excess of one of the nutrients");
                     }
-                }
-                
+
+                    if (second.SpentCalories <= 100 || (second.Proteins<=10 && second.Carbs<=10))
+                    {
+                        Console.Clear();
+                        Console.Write("Finish day");
+                        break;
+                    }
             }
         }
     }
 }
+
