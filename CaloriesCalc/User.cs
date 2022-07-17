@@ -1,11 +1,14 @@
+using System.Collections;
+using System.Collections.Generic;
+
 namespace CaloriesCalc
 {
     public class User
     {
         public int Calories { get;  set; }
-        public int Proteins { get; private set; }
-        public int Fats { get; private set; }
-        public int Carbs { get; private set; }
+        public int Proteins { get;  set; }
+        public int Fats { get;  set; }
+        public int Carbs { get;  set; }
         public int SpentCalories { get; private set; }
         public int SpentProteins { get; private set; }
         public int SpentFats { get; private set; }
